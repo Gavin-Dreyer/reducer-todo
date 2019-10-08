@@ -29,6 +29,15 @@ export const reducer = (state, action) => {
                     }
                 })]
             }
+        case 'DELETE_TASK':
+            return{
+                ...state,
+                items: [...state.items, state.items.filter(item => {
+                    if(item.completed === true) {
+                        return item.item = ''
+                    }
+                })]
+            }
         default:
             return state
     }

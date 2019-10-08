@@ -10,22 +10,6 @@ function App() {
   const [input, setInput] = useState()
 
 
-  // const toggleTask = id => {
-  //   console.log(id)
-
-  //   this.setState({
-  //     taskList: this.state.taskList.map(item => {
-  //       if(item.id === id) {
-  //         return {
-  //           ...item,
-  //           completed: !item.completed
-  //         }
-  //       } else {
-  //         return item
-  //       }
-  //     })
-  //   })
-  // }
 
   const handleChanges = event => {
       setInput(event.target.value)
