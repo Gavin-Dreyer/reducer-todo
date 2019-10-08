@@ -25,3 +25,8 @@
   font-size: 3rem;
   border: 2px solid black;
 }
+
+.Task.completed{
+  text-decoration: line-through;
+}
+

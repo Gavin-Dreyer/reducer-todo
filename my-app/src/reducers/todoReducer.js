@@ -20,7 +20,21 @@ export const reducer = (state, action) => {
                 ...state,
                 items: [...state.items, newItem]
             }
+        case 'TOGGLE_COMPLETED':
+            return {
+                ...state,
+                items: [...state.items, state.items.map(item => {
+                    if(item.id === action.payload2) {
+                    return item.completed = action.payload
+                    }
+                })]
+            }
         default:
             return state
     }
 }
+
+// state.items[0].completed = !state.items[0].completed
+// state.items.map(item => {
+//     return item.completed = !item.completed
+// })

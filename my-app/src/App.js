@@ -1,4 +1,4 @@
-import React, { useReducer, useState} from 'react';
+import React, { useReducer, useState, useEffect} from 'react';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import './App.css';
@@ -9,6 +9,23 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [input, setInput] = useState()
 
+
+  // const toggleTask = id => {
+  //   console.log(id)
+
+  //   this.setState({
+  //     taskList: this.state.taskList.map(item => {
+  //       if(item.id === id) {
+  //         return {
+  //           ...item,
+  //           completed: !item.completed
+  //         }
+  //       } else {
+  //         return item
+  //       }
+  //     })
+  //   })
+  // }
 
   const handleChanges = event => {
       setInput(event.target.value)
@@ -22,7 +39,7 @@ function App() {
   
   return (
     <div className="App">
-      <TodoList state={state} />
+      <TodoList state={state} dispatch={dispatch} />
       <TodoForm state={state} input={input} handleChanges={handleChanges} dispatch={dispatch} handleSubmit={handleSubmit} />
     </div>
   );
