@@ -23,20 +23,15 @@ export const reducer = (state, action) => {
         case 'TOGGLE_COMPLETED':
             return {
                 ...state,
-                items: [...state.items, state.items.map(item => {
+                items: state.items.map(item => {
                     if(item.id === action.payload2) {
-                    return item.completed = action.payload
-                    }
-                })]
+                     item.completed = action.payload
+                    } return {...item, completed: item.completed}
+                })
             }
         case 'DELETE_TASK':
             return{
-                ...state,
-                items: [...state.items, state.items.filter(item => {
-                    if(item.completed === true) {
-                        return item.item = ''
-                    }
-                })]
+                items: state.items.filter(item => item.completed !== true)
             }
         default:
             return state
@@ -46,4 +41,11 @@ export const reducer = (state, action) => {
 // state.items[0].completed = !state.items[0].completed
 // state.items.map(item => {
 //     return item.completed = !item.completed
+// })
+
+
+// state.items.filter(item => {
+//     if(item.completed === true) {
+//         return item.item = ''
+//     }
 // })

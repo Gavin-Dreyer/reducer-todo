@@ -9,7 +9,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [input, setInput] = useState()
 
-
+  console.log(state)
 
   const handleChanges = event => {
       setInput(event.target.value)

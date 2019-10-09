@@ -4,8 +4,6 @@ import Todo from './Todo'
 
 const TodoList = props => {
 
-    console.log(props.state.items)
-
     return (
         <>
             <div>
